@@ -71,6 +71,8 @@ const apiSettings = {
 
     return rating;
   }
+
+  
 };
 
 export default apiSettings;

@@ -4,8 +4,8 @@
 const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const SEARCH_BASE_URL = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=`;
-const POPULAR_BASE_URL = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US`;
+const SEARCH_BASE_URL = `${API_URL}search/movie?api_key=${API_KEY}&language=fr-FR&query=`;
+const POPULAR_BASE_URL = `${API_URL}movie/popular?api_key=${API_KEY}&language=fr-FR`;
 // For login and voting
 const REQUEST_TOKEN_URL = `${API_URL}authentication/token/new?api_key=${API_KEY}`;
 const LOGIN_URL = `${API_URL}authentication/token/validate_with_login?api_key=${API_KEY}`;

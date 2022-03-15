@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   color: var(--white);
   background: var(--darkGrey);
   border-radius: 20px;
-  padding: 5px;
+  padding: 32px;
   text-align: center;
 
   h3 {

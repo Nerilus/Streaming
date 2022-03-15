@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState} from 'react';
 import API from '../../API';
 import PropTypes from 'prop-types';
+import axios from 'axios'
 // Components
 import Thumb from '../Thumb';
 import Rate from '../Rate';
@@ -12,6 +13,9 @@ import NoImage from '../../images/no_image.jpg';
 import { Wrapper, Content, Text } from './MovieInfo.styles';
 // Context
 import { Context } from '../../context';
+import Video from '../Video';
+
+
 
 const MovieInfo = ({ movie }) => {
   const [user] = useContext(Context);
@@ -20,7 +24,6 @@ const MovieInfo = ({ movie }) => {
     const rate = await API.rateMovie(user.sessionId, movie.id, value);
     console.log(rate);
   };
-
   return (
     <Wrapper backdrop={movie.backdrop_path}>
       <Content>
@@ -31,19 +34,20 @@ const MovieInfo = ({ movie }) => {
               : NoImage
           }
           clickable={false}
+          alt="image.poster"
         />
         <Text>
           <h1>{movie.title}</h1>
-          <h3>PLOT</h3>
+          <h3>synopsis</h3>
           <p>{movie.overview}</p>
 
           <div className='rating-directors'>
             <div>
-              <h3>RATING</h3>
+              <h3>Note</h3>
               <div className='score'>{movie.vote_average}</div>
             </div>
             <div className='director'>
-              <h3>DIRECTOR{movie.directors.length > 1 ? 'S' : ''}</h3>
+              <h3>Réalisateur{movie.directors.length > 1 ? 'S' : ''}</h3>
               {movie.directors.map(director => (
                 <p key={director.credit_id}>{director.name}</p>
               ))}
@@ -55,6 +59,7 @@ const MovieInfo = ({ movie }) => {
               <Rate callback={handleRating} />
             </div>
           )}
+            <Video/>
         </Text>
       </Content>
     </Wrapper>

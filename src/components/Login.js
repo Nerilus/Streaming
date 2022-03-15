@@ -51,12 +51,14 @@ const Login = () => {
         value={username}
         name='username'
         onChange={handleInput}
+        required
       />
       <input
         type='password'
         value={password}
         name='password'
         onChange={handleInput}
+        required
       />
       <Button text='Login' callback={handleSubmit} />
     </Wrapper>
